@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "magicui-framework-beta",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.com/peter.popovec/magicui-framework-beta",
+      "state" : {
+        "branch" : "main",
+        "revision" : "37ce310f8d5b2bb112a563cb5d84a5e0a24652a5"
+      }
+    }
+  ],
+  "version" : 2
+}
