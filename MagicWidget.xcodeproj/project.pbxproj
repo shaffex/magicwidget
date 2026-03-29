@@ -6,14 +6,120 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2F9381492F79501700E238C7 /* MagicUi in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9381482F79501700E238C7 /* MagicUi */; };
+		2F93816E2F79563400E238C7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381372F794F2F00E238C7 /* WidgetKit.framework */; };
+		2F93816F2F79563400E238C7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381392F794F2F00E238C7 /* SwiftUI.framework */; };
+		2F93817A2F79563500E238C7 /* TestingWidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2F93816D2F79563400E238C7 /* TestingWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2F9381852F795C0C00E238C7 /* MagicWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381252F794F0200E238C7 /* MagicWidget.framework */; };
+		2F9381862F795C0C00E238C7 /* MagicWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381252F794F0200E238C7 /* MagicWidget.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2F9381902F795F6A00E238C7 /* MagicWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381252F794F0200E238C7 /* MagicWidget.framework */; };
+		2F9381912F795F6A00E238C7 /* MagicWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381252F794F0200E238C7 /* MagicWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F9381962F795F8900E238C7 /* MagicUi in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9381952F795F8900E238C7 /* MagicUi */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F9381782F79563500E238C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F93811C2F794F0200E238C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F93816C2F79563400E238C7;
+			remoteInfo = TestingWidgetExtensionExtension;
+		};
+		2F9381872F795C0C00E238C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F93811C2F794F0200E238C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F9381242F794F0200E238C7;
+			remoteInfo = MagicWidget;
+		};
+		2F93818C2F795E7500E238C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F93811C2F794F0200E238C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F93816C2F79563400E238C7;
+			remoteInfo = TestingWidgetExtensionExtension;
+		};
+		2F9381922F795F6A00E238C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F93811C2F794F0200E238C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F9381242F794F0200E238C7;
+			remoteInfo = MagicWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F93817F2F79563500E238C7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2F93817A2F79563500E238C7 /* TestingWidgetExtensionExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F9381892F795C0C00E238C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2F9381862F795C0C00E238C7 /* MagicWidget.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F9381942F795F6A00E238C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2F9381912F795F6A00E238C7 /* MagicWidget.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2F9381252F794F0200E238C7 /* MagicWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MagicWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F9381372F794F2F00E238C7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2F9381392F794F2F00E238C7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2F93815E2F79557E00E238C7 /* TestingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F93816D2F79563400E238C7 /* TestingWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TestingWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2F93817B2F79563500E238C7 /* Exceptions for "TestingWidgetExtension" folder in "TestingWidgetExtensionExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2F93816C2F79563400E238C7 /* TestingWidgetExtensionExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2F9381272F794F0200E238C7 /* MagicWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MagicWidget;
+			sourceTree = "<group>";
+		};
+		2F93815F2F79557E00E238C7 /* TestingApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TestingApp;
+			sourceTree = "<group>";
+		};
+		2F9381702F79563400E238C7 /* TestingWidgetExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2F93817B2F79563500E238C7 /* Exceptions for "TestingWidgetExtension" folder in "TestingWidgetExtensionExtension" target */,
+			);
+			path = TestingWidgetExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +129,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9381492F79501700E238C7 /* MagicUi in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F93815B2F79557E00E238C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F9381962F795F8900E238C7 /* MagicUi in Frameworks */,
+				2F9381902F795F6A00E238C7 /* MagicWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F93816A2F79563400E238C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F93816F2F79563400E238C7 /* SwiftUI.framework in Frameworks */,
+				2F9381852F795C0C00E238C7 /* MagicWidget.framework in Frameworks */,
+				2F93816E2F79563400E238C7 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				2F9381272F794F0200E238C7 /* MagicWidget */,
+				2F93815F2F79557E00E238C7 /* TestingApp */,
+				2F9381702F79563400E238C7 /* TestingWidgetExtension */,
+				2F9381362F794F2F00E238C7 /* Frameworks */,
 				2F9381262F794F0200E238C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +170,19 @@
 			isa = PBXGroup;
 			children = (
 				2F9381252F794F0200E238C7 /* MagicWidget.framework */,
+				2F93815E2F79557E00E238C7 /* TestingApp.app */,
+				2F93816D2F79563400E238C7 /* TestingWidgetExtensionExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2F9381362F794F2F00E238C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F9381372F794F2F00E238C7 /* WidgetKit.framework */,
+				2F9381392F794F2F00E238C7 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,10 +216,63 @@
 			);
 			name = MagicWidget;
 			packageProductDependencies = (
+				2F9381482F79501700E238C7 /* MagicUi */,
 			);
 			productName = MagicWidget;
 			productReference = 2F9381252F794F0200E238C7 /* MagicWidget.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		2F93815D2F79557E00E238C7 /* TestingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F9381662F79558000E238C7 /* Build configuration list for PBXNativeTarget "TestingApp" */;
+			buildPhases = (
+				2F93815A2F79557E00E238C7 /* Sources */,
+				2F93815B2F79557E00E238C7 /* Frameworks */,
+				2F93815C2F79557E00E238C7 /* Resources */,
+				2F93817F2F79563500E238C7 /* Embed Foundation Extensions */,
+				2F9381942F795F6A00E238C7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F9381792F79563500E238C7 /* PBXTargetDependency */,
+				2F93818D2F795E7500E238C7 /* PBXTargetDependency */,
+				2F9381932F795F6A00E238C7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2F93815F2F79557E00E238C7 /* TestingApp */,
+			);
+			name = TestingApp;
+			packageProductDependencies = (
+				2F9381952F795F8900E238C7 /* MagicUi */,
+			);
+			productName = TestingApp;
+			productReference = 2F93815E2F79557E00E238C7 /* TestingApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F93816C2F79563400E238C7 /* TestingWidgetExtensionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F93817C2F79563500E238C7 /* Build configuration list for PBXNativeTarget "TestingWidgetExtensionExtension" */;
+			buildPhases = (
+				2F9381692F79563400E238C7 /* Sources */,
+				2F93816A2F79563400E238C7 /* Frameworks */,
+				2F93816B2F79563400E238C7 /* Resources */,
+				2F9381892F795C0C00E238C7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F9381882F795C0C00E238C7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2F9381702F79563400E238C7 /* TestingWidgetExtension */,
+			);
+			name = TestingWidgetExtensionExtension;
+			packageProductDependencies = (
+			);
+			productName = TestingWidgetExtensionExtension;
+			productReference = 2F93816D2F79563400E238C7 /* TestingWidgetExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,6 +287,12 @@
 					2F9381242F794F0200E238C7 = {
 						CreatedOnToolsVersion = 26.4;
 					};
+					2F93815D2F79557E00E238C7 = {
+						CreatedOnToolsVersion = 26.4;
+					};
+					2F93816C2F79563400E238C7 = {
+						CreatedOnToolsVersion = 26.4;
+					};
 				};
 			};
 			buildConfigurationList = 2F93811F2F794F0200E238C7 /* Build configuration list for PBXProject "MagicWidget" */;
@@ -105,18 +304,37 @@
 			);
 			mainGroup = 2F93811B2F794F0200E238C7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2F9381472F79501700E238C7 /* XCRemoteSwiftPackageReference "magicui-framework-beta" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F9381262F794F0200E238C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				2F9381242F794F0200E238C7 /* MagicWidget */,
+				2F93815D2F79557E00E238C7 /* TestingApp */,
+				2F93816C2F79563400E238C7 /* TestingWidgetExtensionExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2F9381232F794F0200E238C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F93815C2F79557E00E238C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F93816B2F79563400E238C7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -133,7 +351,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F93815A2F79557E00E238C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F9381692F79563400E238C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F9381792F79563500E238C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F93816C2F79563400E238C7 /* TestingWidgetExtensionExtension */;
+			targetProxy = 2F9381782F79563500E238C7 /* PBXContainerItemProxy */;
+		};
+		2F9381882F795C0C00E238C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F9381242F794F0200E238C7 /* MagicWidget */;
+			targetProxy = 2F9381872F795C0C00E238C7 /* PBXContainerItemProxy */;
+		};
+		2F93818D2F795E7500E238C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F93816C2F79563400E238C7 /* TestingWidgetExtensionExtension */;
+			targetProxy = 2F93818C2F795E7500E238C7 /* PBXContainerItemProxy */;
+		};
+		2F9381932F795F6A00E238C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F9381242F794F0200E238C7 /* MagicWidget */;
+			targetProxy = 2F9381922F795F6A00E238C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2F93812C2F794F0200E238C7 /* Debug */ = {
@@ -335,6 +590,130 @@
 			};
 			name = Release;
 		};
+		2F9381672F79558000E238C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X47885HM53;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaffex.TestingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F9381682F79558000E238C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X47885HM53;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaffex.TestingApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2F93817D2F79563500E238C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X47885HM53;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestingWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TestingWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaffex.TestingApp.TestingWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F93817E2F79563500E238C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X47885HM53;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestingWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TestingWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shaffex.TestingApp.TestingWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -356,7 +735,49 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2F9381662F79558000E238C7 /* Build configuration list for PBXNativeTarget "TestingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F9381672F79558000E238C7 /* Debug */,
+				2F9381682F79558000E238C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F93817C2F79563500E238C7 /* Build configuration list for PBXNativeTarget "TestingWidgetExtensionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F93817D2F79563500E238C7 /* Debug */,
+				2F93817E2F79563500E238C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F9381472F79501700E238C7 /* XCRemoteSwiftPackageReference "magicui-framework-beta" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.com/peter.popovec/magicui-framework-beta";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F9381482F79501700E238C7 /* MagicUi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F9381472F79501700E238C7 /* XCRemoteSwiftPackageReference "magicui-framework-beta" */;
+			productName = MagicUi;
+		};
+		2F9381952F795F8900E238C7 /* MagicUi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F9381472F79501700E238C7 /* XCRemoteSwiftPackageReference "magicui-framework-beta" */;
+			productName = MagicUi;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2F93811C2F794F0200E238C7 /* Project object */;
 }
