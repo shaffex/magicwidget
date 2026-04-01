@@ -10,13 +10,18 @@ import AppIntents
 import SwiftUI
 import MagicUiFramework
 
-public struct MagicWidgetAppIntents: AppIntentsPackage {
-    public init() {
-    }
-    
-    public static var includedPackages: [any AppIntentsPackage.Type] {
-        [MyFrameworkAppIntents.self]
-    }
+//public struct MagicWidgetAppIntents: AppIntentsPackage {
+//    public init() {
+//    }
+//    
+//    public static var includedPackages: [any AppIntentsPackage.Type] {
+//        [MyFrameworkAppIntents.self]
+//    }
+//}
+
+public struct MyKkcFrameworkAppIntents: AppIntentsPackage {
+    @available(iOS 17.0, *)
+    public static var includedPackages: [any AppIntentsPackage.Type] = []
 }
 
 public struct MyNetworkWidget: Widget {
