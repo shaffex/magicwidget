@@ -15,8 +15,8 @@ struct APIResponse: Decodable {
 }
 
 enum NetworkService {
-    static func fetchEntry(urlString: String, configuration: MyNetworkWidgetConfigurationAppIntent) async throws -> NetworkWidgetProvider.WidgetTimelineEntry {
-        let url = URL(string: urlString + "?deviceId=\(configuration.deviceId)")!
+    static func fetchEntry(urlString: String, family: WidgetFamily, configuration: MyNetworkWidgetConfigurationAppIntent) async throws -> NetworkWidgetProvider.WidgetTimelineEntry {
+        let url = URL(string: urlString + "?family=\(family.debugDescription)&deviceId=\(configuration.deviceId)")!
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData)
         request.timeoutInterval = 10
 
@@ -29,15 +29,24 @@ enum NetworkService {
         
         // Read raw response body as String
         let responseBody = String(data: data, encoding: .utf8) ?? ""
-        
-        SxWidetSharedCode.saveToSharedFile(widgetId: "netwidget1_small_network.xml", xml: responseBody)
+        let fileName = SxWidetSharedCode.getFileName(kind: "netwidget1", family: family, postFix: "network")
+        let previousXML = SxWidetSharedCode.loadFromSharedFile(filename: fileName) ?? ""
+        let xml = previousXML == responseBody ? previousXML : responseBody
+        if xml == "" {
+            print("kkc")
+        }
+
+        if previousXML != responseBody {
+            SxWidetSharedCode.saveToSharedFile(widgetId: fileName, xml: responseBody)
+        }
         
         
         return NetworkWidgetProvider.WidgetTimelineEntry(
             date: Date.now,
-                            configuration: configuration,
-            family: WidgetFamily.systemSmall,
-                            widgetPostFix: "network"
-                        )
+            configuration: configuration,
+            family: family,
+            widgetPostFix: "network",
+            xml: xml
+        )
     }
 }

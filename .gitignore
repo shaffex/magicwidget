@@ -26,3 +26,4 @@ build/
 .env
 .env.local
 .build
+MagicWidget.xcodeproj/project.xcworkspace/xcuserdata/petres.xcuserdatad/UserInterfaceState.xcuserstate

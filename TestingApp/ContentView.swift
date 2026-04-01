@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
     var body: some View {
@@ -14,6 +15,9 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+            Button("Reload") {
+                WidgetCenter.shared.reloadAllTimelines()
+            }
         }
         .padding()
     }

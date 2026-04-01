@@ -9,15 +9,28 @@ import WidgetKit
 import SwiftUI
 import MagicUiFramework
 
+
+struct KokoceCongig {
+    static let xmlPlaceholder = """
+        <body>
+            <text>Placeholder XML</text>
+        </body>
+        """
+    
+    static let xmlSnapshot = """
+        <body>
+            <text>Snapshot XML</text>
+        </body>
+        """
+}
+
+
 struct MyNetworkWidgetEntryView : View {
     var entry: NetworkWidgetProvider.Entry
     let kind: String
-
+    
     var body: some View {
-//        Text(entry.widgetPostFix)
-        
-        
-        MagicUiWidgetView(string: SxWidetSharedCode.loadFromSharedFile(filename: SxWidetSharedCode.getFileName(kind: kind, family: entry.family, postFix: entry.widgetPostFix)) ?? "")
+        MagicUiWidgetView(string: entry.xml)
             .widgetURL(URL(string: kind)!)
     }
 }

@@ -8,20 +8,29 @@
 import WidgetKit
 import AppIntents
 import SwiftUI
+import MagicUiFramework
 
 public struct MagicWidgetAppIntents: AppIntentsPackage {
-    public init() {}
+    public init() {
+    }
+    
+    public static var includedPackages: [any AppIntentsPackage.Type] {
+        [MyFrameworkAppIntents.self]
+    }
 }
 
 public struct MyNetworkWidget: Widget {
     let kind: String = "netwidget1"
-
-    public init() {}
+    
+    public init() {
+        MagicUiView.installActionPlugin(name: "reloadAllTimelines", plugin: SxAction_reloadAllTimelines.self)
+    }
     
     public var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: MyNetworkWidgetConfigurationAppIntent.self, provider: NetworkWidgetProvider()) { entry in
             MyNetworkWidgetEntryView(entry: entry, kind: kind)
                 .containerBackground(.fill.tertiary, for: .widget)
+                // must be there otherewise please adopt container background API will appear on widget
         }
         .configurationDisplayName("KI kkc3 Network Widget 1")
         .description("You can configure this widget by clicking on Edit Widget")
@@ -37,14 +46,15 @@ struct NetworkWidgetProvider: AppIntentTimelineProvider {
         let configuration: MyNetworkWidgetConfigurationAppIntent
         let family: WidgetFamily
         let widgetPostFix: String
+        let xml: String
     }
-    
+
     func placeholder(in context: Context) -> WidgetTimelineEntry {
-        return WidgetTimelineEntry(date: Date(), configuration: MyNetworkWidgetConfigurationAppIntent(), family: context.family, widgetPostFix: "placeholder")
+        return WidgetTimelineEntry(date: Date(), configuration: MyNetworkWidgetConfigurationAppIntent(), family: context.family, widgetPostFix: "placeholder", xml: KokoceCongig.xmlPlaceholder)
     }
 
     func snapshot(for configuration: MyNetworkWidgetConfigurationAppIntent, in context: Context) async -> WidgetTimelineEntry {
-        WidgetTimelineEntry(date: Date(), configuration: configuration, family: context.family, widgetPostFix: "snapshot")
+        WidgetTimelineEntry(date: Date(), configuration: configuration, family: context.family, widgetPostFix: "snapshot", xml: KokoceCongig.xmlSnapshot)
     }
     
     // Called by the system to build the real timeline
@@ -55,10 +65,10 @@ struct NetworkWidgetProvider: AppIntentTimelineProvider {
             return Timeline(entries: [], policy: .never)
         }
         
-        print("timeline: $refreshInterval: \(refreshInterval), widgetURL: \(configuration.widgetURL!)")
+        print("timeline: $refreshInterval: \(refreshInterval) family: \(context.family), widgetURL: \(configuration.widgetURL!)")
         
         do {
-            let entry = try await NetworkService.fetchEntry(urlString: widgetURL, configuration: configuration)
+            let entry = try await NetworkService.fetchEntry(urlString: widgetURL, family: context.family, configuration: configuration)
             let nextRefresh = Calendar.current.date(byAdding: .minute, value: refreshInterval, to: .now)!
             return Timeline(entries: [entry], policy: .after(nextRefresh))
         } catch {

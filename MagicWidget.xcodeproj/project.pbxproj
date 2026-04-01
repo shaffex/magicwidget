@@ -94,6 +94,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2F392EBD2F7D074A006D75A5 /* Exceptions for "MagicWidget" folder in "TestingWidgetExtensionExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Sources/SxWidgetSharedCode.swift,
+			);
+			target = 2F93816C2F79563400E238C7 /* TestingWidgetExtensionExtension */;
+		};
 		2F93817B2F79563500E238C7 /* Exceptions for "TestingWidgetExtension" folder in "TestingWidgetExtensionExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -106,6 +113,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2F9381272F794F0200E238C7 /* MagicWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2F392EBD2F7D074A006D75A5 /* Exceptions for "MagicWidget" folder in "TestingWidgetExtensionExtension" target */,
+			);
 			path = MagicWidget;
 			sourceTree = "<group>";
 		};
@@ -600,6 +610,7 @@
 				DEVELOPMENT_TEAM = X47885HM53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Widget Tester";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -632,6 +643,7 @@
 				DEVELOPMENT_TEAM = X47885HM53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Widget Tester";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
