@@ -10,6 +10,10 @@ import AppIntents
 import SwiftUI
 import MagicUiFramework
 
+// inside MagicWidget
+@_exported import MagicUiFramework
+@_exported import AppIntents
+
 //public struct MagicWidgetAppIntents: AppIntentsPackage {
 //    public init() {
 //    }
