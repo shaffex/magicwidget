@@ -19,12 +19,12 @@ import MagicUiFramework
 //    }
 //}
 
-public let kokoce = [MyFrameworkAppIntents.self]
-
 public struct MyKkcFrameworkAppIntents: AppIntentsPackage {
     public static var includedPackages: [any AppIntentsPackage.Type] {
         [MyFrameworkAppIntents.self]
     }
+    
+    public let kokoce = [MyFrameworkAppIntents.self]
 }
 
 //public struct MyKkcFrameworkAppIntents: AppIntentsPackage {
