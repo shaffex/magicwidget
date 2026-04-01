@@ -87,21 +87,30 @@ enum NetworkService {
 
         let task = Task<NetworkWidgetProvider.WidgetTimelineEntry, Error> {
             print("NetworkService: live request for \(requestKey)")
-            let url = URL(string: urlString + "?family=\(family.debugDescription)&deviceId=\(configuration.deviceId)")!
-            var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData)
-            request.timeoutInterval = 10
-
-            let (data, response) = try await URLSession.shared.data(for: request)
-
-            guard let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) else {
-                throw URLError(.badServerResponse)
+            if let url = URL(string: urlString + "?family=\(family.debugDescription)&deviceId=\(configuration.deviceId)") {
+                var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData)
+                request.timeoutInterval = 10
+                
+                let (data, response) = try await URLSession.shared.data(for: request)
+                
+                guard let http = response as? HTTPURLResponse, (200...299).contains(http.statusCode) else {
+                    throw URLError(.badServerResponse)
+                }
+                
+                return buildEntry(
+                    from: data,
+                    family: family,
+                    configuration: configuration
+                )
+            } else {
+                let str = "<body><ellipse/></body>"
+                let data = str.data(using: .utf8)!
+                return buildEntry(
+                    from: data,
+                    family: family,
+                    configuration: configuration
+                )
             }
-
-            return buildEntry(
-                from: data,
-                family: family,
-                configuration: configuration
-            )
         }
 
         await NetworkRequestGate.shared.storeInFlightRequest(task, for: requestKey)
