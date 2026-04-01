@@ -22,6 +22,10 @@ public struct MagicWidgetAppIntents: AppIntentsPackage {
 public struct MyNetworkWidget: Widget {
     let kind: String = "netwidget1"
     
+    public static func performAction(_ action: String) {
+        PluginActions.shared.runAction(action)
+    }
+    
     public init() {
         MagicUiView.installActionPlugin(name: "reloadAllTimelines", plugin: SxAction_reloadAllTimelines.self)
     }
