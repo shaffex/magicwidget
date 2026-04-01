@@ -20,9 +20,15 @@ import MagicUiFramework
 //}
 
 public struct MyKkcFrameworkAppIntents: AppIntentsPackage {
-    @available(iOS 17.0, *)
-    public static var includedPackages: [any AppIntentsPackage.Type] = [MyFrameworkAppIntents.self]
+    public static var includedPackages: [any AppIntentsPackage.Type] {
+        [MyFrameworkAppIntents.self]
+    }
 }
+
+//public struct MyKkcFrameworkAppIntents: AppIntentsPackage {
+//    //@available(iOS 17.0, *)
+//    public static var includedPackages: [any AppIntentsPackage.Type] = [MyFrameworkAppIntents.self]
+//}
 
 public struct MyNetworkWidget: Widget {
     let kind: String = "netwidget1"
