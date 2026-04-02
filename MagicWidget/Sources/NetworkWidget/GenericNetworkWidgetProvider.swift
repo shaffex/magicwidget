@@ -8,4 +8,4 @@
 import MagicWidget
 
 typealias NetworkWidgetIntentValues = MagicNetworkWidgetConfigurationIntent
-typealias GenericNetworkWidgetProvider<ConfigurationIntent: MagicNetworkWidgetConfigurationIntent> = NetworkWidgetProvider<ConfigurationIntent>
+public typealias GenericNetworkWidgetProvider<ConfigurationIntent: MagicNetworkWidgetConfigurationIntent> = NetworkWidgetProvider<ConfigurationIntent>
