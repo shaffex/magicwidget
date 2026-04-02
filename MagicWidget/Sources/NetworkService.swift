@@ -23,14 +23,10 @@ actor NetworkRequestGate {
     }
 
     private var cachedResults: [String: CachedResult] = [:]
-    private var inFlightRequests: [String: Task<NetworkWidgetProvider.WidgetTimelineEntry, Error>] = [:]
+    private var inFlightRequests: [String: Task<String, Error>] = [:]
     private let minimumRequestInterval: TimeInterval = 2
 
-    func cachedEntryIfFresh(
-        for key: String,
-        family: WidgetFamily,
-        configuration: MyNetworkWidgetConfigurationAppIntent
-    ) -> NetworkWidgetProvider.WidgetTimelineEntry? {
+    func cachedXMLIfFresh(for key: String) -> String? {
         guard let cachedResult = cachedResults[key] else {
             return nil
         }
@@ -39,23 +35,14 @@ actor NetworkRequestGate {
             return nil
         }
 
-        return NetworkWidgetProvider.WidgetTimelineEntry(
-            date: .now,
-            configuration: configuration,
-            family: family,
-            widgetPostFix: "network",
-            xml: cachedResult.xml
-        )
+        return cachedResult.xml
     }
 
-    func inFlightRequest(for key: String) -> Task<NetworkWidgetProvider.WidgetTimelineEntry, Error>? {
+    func inFlightRequest(for key: String) -> Task<String, Error>? {
         inFlightRequests[key]
     }
 
-    func storeInFlightRequest(
-        _ task: Task<NetworkWidgetProvider.WidgetTimelineEntry, Error>,
-        for key: String
-    ) {
+    func storeInFlightRequest(_ task: Task<String, Error>, for key: String) {
         inFlightRequests[key] = task
     }
 
@@ -70,22 +57,23 @@ actor NetworkRequestGate {
 }
 
 enum NetworkService {
-    static func fetchEntry(urlString: String, family: WidgetFamily, configuration: MyNetworkWidgetConfigurationAppIntent) async throws -> NetworkWidgetProvider.WidgetTimelineEntry {
+    static func fetchEntry<Intent: MagicNetworkWidgetConfigurationIntent>(
+        urlString: String,
+        family: WidgetFamily,
+        configuration: Intent
+    ) async throws -> NetworkWidgetProvider<Intent>.WidgetTimelineEntry {
         let requestKey = "\(urlString)|\(family.rawValue)|\(configuration.deviceId)"
-        if let cachedEntry = await NetworkRequestGate.shared.cachedEntryIfFresh(
-            for: requestKey,
-            family: family,
-            configuration: configuration
-        ) {
+        if let cachedXML = await NetworkRequestGate.shared.cachedXMLIfFresh(for: requestKey) {
             print("NetworkService: cached response for \(requestKey)")
-            return cachedEntry
+            return buildEntry(from: cachedXML, family: family, configuration: configuration)
         }
 
         if let existingTask = await NetworkRequestGate.shared.inFlightRequest(for: requestKey) {
-            return try await existingTask.value
+            let xml = try await existingTask.value
+            return buildEntry(from: xml, family: family, configuration: configuration)
         }
 
-        let task = Task<NetworkWidgetProvider.WidgetTimelineEntry, Error> {
+        let task = Task<String, Error> {
             print("NetworkService: live request for \(requestKey)")
             if let url = URL(string: urlString + "?family=\(family.debugDescription)&deviceId=\(configuration.deviceId)") {
                 var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData)
@@ -97,40 +85,29 @@ enum NetworkService {
                     throw URLError(.badServerResponse)
                 }
                 
-                return buildEntry(
-                    from: data,
-                    family: family,
-                    configuration: configuration
-                )
+                return String(data: data, encoding: .utf8) ?? ""
             } else {
-                let str = "<body><ellipse/></body>"
-                let data = str.data(using: .utf8)!
-                return buildEntry(
-                    from: data,
-                    family: family,
-                    configuration: configuration
-                )
+                return "<body><ellipse/></body>"
             }
         }
 
         await NetworkRequestGate.shared.storeInFlightRequest(task, for: requestKey)
 
         do {
-            let entry = try await task.value
-            await NetworkRequestGate.shared.finishRequest(for: requestKey, xml: entry.xml)
-            return entry
+            let xml = try await task.value
+            await NetworkRequestGate.shared.finishRequest(for: requestKey, xml: xml)
+            return buildEntry(from: xml, family: family, configuration: configuration)
         } catch {
             await NetworkRequestGate.shared.failRequest(for: requestKey)
             throw error
         }
     }
 
-    private static func buildEntry(
-        from data: Data,
+    private static func buildEntry<Intent: MagicNetworkWidgetConfigurationIntent>(
+        from responseBody: String,
         family: WidgetFamily,
-        configuration: MyNetworkWidgetConfigurationAppIntent
-    ) -> NetworkWidgetProvider.WidgetTimelineEntry {
-        let responseBody = String(data: data, encoding: .utf8) ?? ""
+        configuration: Intent
+    ) -> NetworkWidgetProvider<Intent>.WidgetTimelineEntry {
         let fileName = SxWidetSharedCode.getFileName(kind: "netwidget1", family: family, postFix: "network")
         let previousXML = SxWidetSharedCode.loadFromSharedFile(filename: fileName) ?? ""
         let xml = previousXML == responseBody ? previousXML : responseBody
@@ -143,7 +120,7 @@ enum NetworkService {
         }
         
         
-        return NetworkWidgetProvider.WidgetTimelineEntry(
+        return NetworkWidgetProvider<Intent>.WidgetTimelineEntry(
             date: Date.now,
             configuration: configuration,
             family: family,

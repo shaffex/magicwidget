@@ -94,9 +94,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2F14B6732F7E813C00DE5212 /* Exceptions for "MagicWidget" folder in "MagicWidget" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Sources/NetworkWidget/GenericNetworkWidgetProvider.swift,
+			);
+			target = 2F9381242F794F0200E238C7 /* MagicWidget */;
+		};
 		2F392EBD2F7D074A006D75A5 /* Exceptions for "MagicWidget" folder in "TestingWidgetExtensionExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Sources/NetworkWidget/GenericNetworkWidgetProvider.swift,
 				Sources/SxWidgetSharedCode.swift,
 			);
 			target = 2F93816C2F79563400E238C7 /* TestingWidgetExtensionExtension */;
@@ -114,6 +122,7 @@
 		2F9381272F794F0200E238C7 /* MagicWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				2F14B6732F7E813C00DE5212 /* Exceptions for "MagicWidget" folder in "MagicWidget" target */,
 				2F392EBD2F7D074A006D75A5 /* Exceptions for "MagicWidget" folder in "TestingWidgetExtensionExtension" target */,
 			);
 			path = MagicWidget;

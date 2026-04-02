@@ -81,7 +81,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
-            value = "netwidget1"
+            value = "MyCustomNetworkWidget"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
