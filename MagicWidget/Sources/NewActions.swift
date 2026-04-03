@@ -14,7 +14,7 @@ struct SxAction_reloadAllTimelines: SxActionProtocol {
     let node: MagicNode?
     
     func execute(_ actionString: String) {
-        WidgetCenter.shared.reloadAllTimelines()
+        //WidgetCenter.shared.reloadAllTimelines()
     }
     
     
