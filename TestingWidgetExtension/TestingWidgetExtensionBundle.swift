@@ -15,9 +15,9 @@ import MagicWidget
 @main
 struct TestingWidgetExtensionBundle: WidgetBundle, AppIntentsPackage {
     //MARK: This is important — it is declared in MagicWidget framework and must be referenced from the widget extension in order for button intent to work
-    static var includedPackages: [any AppIntentsPackage.Type] {
-        [MyFrameworkAppIntents.self]
-    }
+//    static var includedPackages: [any AppIntentsPackage.Type] {
+//        [MyFrameworkAppIntents.self]
+//    }
     
     var body: some Widget {
 //        MyNetworkWidget()

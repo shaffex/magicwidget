@@ -8,10 +8,10 @@
 import WidgetKit
 //import AppIntents
 import SwiftUI
-import MagicUiFramework
+import MagicUI
 
 // inside MagicWidget
-@_exported import MagicUiFramework
+@_exported import MagicUI
 @_exported import AppIntents
 
 public protocol MagicNetworkWidgetConfigurationIntent: WidgetConfigurationIntent {

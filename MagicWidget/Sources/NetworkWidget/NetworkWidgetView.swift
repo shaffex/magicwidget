@@ -7,7 +7,7 @@
 
 import WidgetKit
 import SwiftUI
-import MagicUiFramework
+import MagicUI
 
 public struct NetworkWidgetView<Intent: MagicNetworkWidgetConfigurationIntent> : View {
     var entry: NetworkWidgetProvider<Intent>.WidgetTimelineEntry
@@ -19,7 +19,9 @@ public struct NetworkWidgetView<Intent: MagicNetworkWidgetConfigurationIntent> :
     }
     
     public var body: some View {
-        MagicUiWidgetView(string: entry.xml)
+//        MagicUiWidgetView(string: entry.xml)
+//            .widgetURL(URL(string: kind)!)
+        MagicUiView(string: entry.xml)
             .widgetURL(URL(string: kind)!)
     }
 }

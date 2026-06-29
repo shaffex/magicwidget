@@ -6,16 +6,16 @@
 //
 
 import SwiftUI
-import MagicUiFramework
+import MagicUI
 import WidgetKit
 import AppIntents
 
-struct SxAction_reloadAllTimelines: SxActionProtocol {
-    let node: MagicNode?
-    
-    func execute(_ actionString: String) {
-        //WidgetCenter.shared.reloadAllTimelines()
-    }
-    
-    
-}
+//struct SxAction_reloadAllTimelines: SxActionProtocol {
+//    let node: MagicNode?
+//    
+//    func execute(_ actionString: String) {
+//        //WidgetCenter.shared.reloadAllTimelines()
+//    }
+//    
+//    
+//}
