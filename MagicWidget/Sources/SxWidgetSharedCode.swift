@@ -7,7 +7,7 @@
 
 import Foundation
 import WidgetKit
-import MagicUI
+//import MagicUI
 
 struct SxWidetSharedCode {
     static let appGroupId = "group.com.shaffex.mywidget"

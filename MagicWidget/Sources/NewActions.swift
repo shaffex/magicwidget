@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MagicUI
+//import MagicUI
 import WidgetKit
 import AppIntents
 

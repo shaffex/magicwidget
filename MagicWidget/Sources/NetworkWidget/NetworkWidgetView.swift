@@ -7,7 +7,7 @@
 
 import WidgetKit
 import SwiftUI
-import MagicUI
+internal import MagicUI
 
 public struct NetworkWidgetView<Intent: MagicNetworkWidgetConfigurationIntent> : View {
     var entry: NetworkWidgetProvider<Intent>.WidgetTimelineEntry
