@@ -16,7 +16,6 @@
 		2F9381902F795F6A00E238C7 /* MagicWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381252F794F0200E238C7 /* MagicWidget.framework */; };
 		2F9381912F795F6A00E238C7 /* MagicWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381252F794F0200E238C7 /* MagicWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2FC6E6B52FF2FFF3001EA83F /* MagicUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2FC6E6B42FF2FFF3001EA83F /* MagicUI */; };
-		2FC6E6E42FF300BD001EA83F /* MagicUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2FC6E6E32FF300BD001EA83F /* MagicUI */; };
 		2FC6E6E72FF300DF001EA83F /* MagicUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2FC6E6E62FF300DF001EA83F /* MagicUI */; };
 /* End PBXBuildFile section */
 
@@ -171,7 +170,6 @@
 			files = (
 				2F93816F2F79563400E238C7 /* SwiftUI.framework in Frameworks */,
 				2F9381852F795C0C00E238C7 /* MagicWidget.framework in Frameworks */,
-				2FC6E6E42FF300BD001EA83F /* MagicUI in Frameworks */,
 				2F93816E2F79563400E238C7 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +292,6 @@
 			);
 			name = TestingWidgetExtensionExtension;
 			packageProductDependencies = (
-				2FC6E6E32FF300BD001EA83F /* MagicUI */,
 			);
 			productName = TestingWidgetExtensionExtension;
 			productReference = 2F93816D2F79563400E238C7 /* TestingWidgetExtensionExtension.appex */;
@@ -801,10 +798,6 @@
 			productName = MagicUI;
 		};
 		2FC6E6B42FF2FFF3001EA83F /* MagicUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MagicUI;
-		};
-		2FC6E6E32FF300BD001EA83F /* MagicUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MagicUI;
 		};
