@@ -1,0 +1,15 @@
+{
+  "originHash" : "41eab367daf269ca24b3b2aa7e41b70c42468796cd256d6e234f09a34fc3eb66",
+  "pins" : [
+    {
+      "identity" : "magicui-v2",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shaffex/magicui-v2.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "35951268fab3be75cb340c6725902086dad48f2b"
+      }
+    }
+  ],
+  "version" : 3
+}

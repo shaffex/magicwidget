@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F050FB22FF85DDF00F6DADD /* MagicUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2F050FB12FF85DDF00F6DADD /* MagicUI */; };
 		2F93816E2F79563400E238C7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381372F794F2F00E238C7 /* WidgetKit.framework */; };
 		2F93816F2F79563400E238C7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F9381392F794F2F00E238C7 /* SwiftUI.framework */; };
 		2F93817A2F79563500E238C7 /* TestingWidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2F93816D2F79563400E238C7 /* TestingWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -150,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F050FB22FF85DDF00F6DADD /* MagicUI in Frameworks */,
 				2FC6E6E72FF300DF001EA83F /* MagicUI in Frameworks */,
 				2FC6E6B52FF2FFF3001EA83F /* MagicUI in Frameworks */,
 			);
@@ -240,6 +242,7 @@
 			packageProductDependencies = (
 				2FC6E6B42FF2FFF3001EA83F /* MagicUI */,
 				2FC6E6E62FF300DF001EA83F /* MagicUI */,
+				2F050FB12FF85DDF00F6DADD /* MagicUI */,
 			);
 			productName = MagicWidget;
 			productReference = 2F9381252F794F0200E238C7 /* MagicWidget.framework */;
@@ -328,7 +331,7 @@
 			mainGroup = 2F93811B2F794F0200E238C7;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				2FC6E6E52FF300DF001EA83F /* XCLocalSwiftPackageReference "../MagicUi/V2" */,
+				2F050FB02FF85DDF00F6DADD /* XCRemoteSwiftPackageReference "magicui-v2" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F9381262F794F0200E238C7 /* Products */;
@@ -780,14 +783,23 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		2FC6E6E52FF300DF001EA83F /* XCLocalSwiftPackageReference "../MagicUi/V2" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../MagicUi/V2;
+/* Begin XCRemoteSwiftPackageReference section */
+		2F050FB02FF85DDF00F6DADD /* XCRemoteSwiftPackageReference "magicui-v2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shaffex/magicui-v2.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2F050FB12FF85DDF00F6DADD /* MagicUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F050FB02FF85DDF00F6DADD /* XCRemoteSwiftPackageReference "magicui-v2" */;
+			productName = MagicUI;
+		};
 		2FC6E6B42FF2FFF3001EA83F /* MagicUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MagicUI;
